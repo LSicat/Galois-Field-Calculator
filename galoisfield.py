@@ -32,7 +32,7 @@ else:
 a = [int(n) for n in a.split()]
 b = [int(n) for n in b.split()]
 p = [int(n) for n in p.split()]
-m = len(p)
+m = len(p)-1
 
 print 
 print "Your Galois Field is: GF(2^" + str(m) + ")"
@@ -40,14 +40,14 @@ print "Your Galois Field is: GF(2^" + str(m) + ")"
 
 def inputcheck(a,b,m):
 	for x in a:
-		if x >= m:
-			print "Coefficient can only have max of m-1"
+		if x >= 2**m:
+			print "Coefficient can only have max of 2**m-1"
 			print "m: " + str(m)
 			print "coefficient: " + str(x)
 			return 0
 	for x in b:
-		if x >= m:
-			print "Coefficient can only have max of m-1"
+		if x >= 2**m:
+			print "Coefficient can only have max of 2**m-1"
 			print "m: " + str(m)
 			print "coefficient: " + str(x)
 			return 0
