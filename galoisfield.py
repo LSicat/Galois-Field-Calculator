@@ -124,7 +124,7 @@ def modulo(a,p):
 		a = bitaddition(a,temp,a)
 		while(a[0] == 0 and len(a) > 1):
 			a.pop(0)
-	
+
 	print "--------------------------------------------"
 	print "We modulo the result and get", a
 	print "--------------------------------------------"
@@ -182,6 +182,9 @@ def division(a,b,p):
 	print "Peforming Division", a, "/", b
 	print "We get the inverse of", b
 	b = inverse(b,p)
+	print "--------------------------------------------"
+	print "Inverse is: ", b
+	print "--------------------------------------------"
 	c = multiplication(a,b,p)
 	print "--------------------------------------------"
 	print "Result of the Division is ", c
