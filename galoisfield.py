@@ -71,7 +71,7 @@ def addition(a,b,p,sign):
 		c += str(a[x]^b[x]) + " "
 	print ""
 	print "--------------------------------------------"
-	print "Result of the Addition", c
+	print "Result:", c
 	print "--------------------------------------------"
 
 def bitaddition(a,b,p):
@@ -95,11 +95,18 @@ def multiplication(a,b,p):
 		temp = []
 		if b[(-x-1)] == 0:
 			temp = [0]*(x+len(b))
+		elif b[(-x-1)] > 1:
+			for y in a:
+				temp.append(y*b[(-x-1)])
+			temp+=[0]*x
+
 		else:
 			temp = [0]*x
 			temp = a + temp
-
+		print total, temp
+		
 		total = bitaddition(total,temp,p)
+
 	print "--------------------------------------------"
 	print "Result of Multiplication (without modulo) is ", total
 	print "--------------------------------------------"
@@ -117,6 +124,7 @@ def modulo(a,p):
 		a = bitaddition(a,temp,a)
 		while(a[0] == 0 and len(a) > 1):
 			a.pop(0)
+	
 	print "--------------------------------------------"
 	print "We modulo the result and get", a
 	print "--------------------------------------------"
